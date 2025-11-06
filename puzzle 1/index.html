@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Puzzle Challenge</title>
+  <title>Quality Week Puzzle Challenge</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -10,9 +10,7 @@
       padding: 40px;
       background-color: #f7f9fc;
     }
-    h1 {
-      color: #333;
-    }
+    h1 { color: #333; }
     .puzzle {
       display: flex;
       flex-wrap: wrap;
@@ -32,10 +30,7 @@
       font-size: 1.2em;
       color: green;
     }
-    #emailInput {
-      padding: 8px;
-      width: 250px;
-    }
+    #emailInput { padding: 8px; width: 250px; }
     #startBtn, #getPieceBtn {
       margin-top: 10px;
       padding: 10px 20px;
@@ -63,21 +58,21 @@
 
 <script>
   // -------- SETTINGS --------
-  const TOTAL_PIECES = 4; // number of pieces
+  const TOTAL_PIECES = 4;
   const PUZZLE_IMAGES = [
     "piece1.png",
     "piece2.png",
     "piece3.png",
     "piece4.png"
   ];
-  const FULL_PUZZLE_IMAGES = "puzzle1/full.jpg";
-  const NOTIFY_WEBHOOK = "https://script.google.com/macros/s/AKfycbyVaBw4-yONRbaCnOw8CRzuJZN5JFxiq-s_6fpgxc3MLM3e-nwV7pctguiROHWfSN02/exec"; // optional
+  const FULL_PUZZLE_IMAGE = "puzzle1/full.jpg";
+  const NOTIFY_WEBHOOK = "https://script.google.com/macros/s/AKfycbyVaBw4-yONRbaCnOw8CRzuJZN5JFxiq-s_6fpgxc3MLM3e-nwV7pctguiROHWfSN02/exec";
 
   let userEmail = "";
   let userData = {};
 
   const urlParams = new URLSearchParams(window.location.search);
-  const thisPiece = parseInt(urlParams.get("piece")); // which QR/piece they scanned
+  const thisPiece = parseInt(urlParams.get("piece"));
 
   const startBtn = document.getElementById("startBtn");
   const getPieceBtn = document.getElementById("getPieceBtn");
@@ -164,6 +159,5 @@
     claimPiece();
   });
 </script>
-
 </body>
 </html>
